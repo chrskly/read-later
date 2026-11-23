@@ -1,0 +1,13 @@
+services:
+  read-later:
+    build: .
+    container_name: read-later
+    restart: unless-stopped
+    ports:
+      - "8765:8765"
+    # Run as your user so the PDFs aren't owned by root. Find yours with `id -u` / `id -g`.
+    user: "1000:1000"
+    env_file: .env
+    volumes:
+      # Change the left side to your e-reader sync folder on the server.
+      - /srv/ereader-sync/articles:/output

@@ -1,0 +1,5 @@
+flask==3.0.3
+gunicorn==23.0.0
+requests==2.32.3
+trafilatura==2.0.0
+weasyprint==63.1
